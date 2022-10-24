@@ -31,5 +31,5 @@ const calc =
     }
 };
 
-export default { greet, calc };
+module.exports = { greet, calc };
 

@@ -1,22 +1,53 @@
 function doubler(arr) {
   
-  for(i in arr)
-  {
-    const arrDouble = arr.map(i * 2)
-  }
+  const arrDouble = arr.map(element => {
+    return element * 2
+  });
 
   return arrDouble
 }
 
-function mapCap() {
-
+function mapCap(arr) 
+{
+  const capArr = arr.map(element => {
+    return element.toUpperCase();
+  });
+  
+  return capArr
 }
 
-function canRideTheRide() {
+function canRideTheRide(objArr) 
+{
+  //let resultsArr = []
 
+  const resultsArr = objArr.map(element => {
+    if( element.age > 16 )
+    {
+      return element.name + " can ride the ride"
+    }
+    else 
+    {
+      return "Sorry, " + element.name + " cannot ride the ride"
+    }
+  });
+
+  // for( i in objArr )
+  // {
+  //   if( objArr[i].age > 16 )
+  //   {
+  //     resultsArr.push(objArr[i].name + " can ride the ride")
+  //   }
+  //   else 
+  //   {
+  //     resultsArr.push("Sorry, " + objArr[i].name + " cannot ride the ride")
+  //   }
+  // }
+
+  return resultsArr
 }
 
-function indAndVal() {
+function indAndVal() 
+{
 
 }
 
@@ -46,4 +77,7 @@ module.exports = {
   getCart,
   findGreater,
 };
+
+
+
 
