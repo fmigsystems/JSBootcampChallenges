@@ -46,25 +46,57 @@ function canRideTheRide(objArr)
   return resultsArr
 }
 
-function indAndVal() 
+function indAndVal(varArr) 
 {
+  //const arr = []
 
+  const arr = varArr.map(element => {
+    return {index: element, value: element}
+  });
+
+  // for( i in varArr )
+  // {
+  //   arr.push({index: i, value: varArr[i]})
+  // }
+
+  return arr 
 }
 
-function filterEvens() {
+function filterEvens(arr) 
+{
+  const evenArr = arr.filter(element => {
+    if( element % 2 == 0) return element 
+  })
 
+  return evenArr
 }
 
-function gmailSearch() {
+function gmailSearch(emailArr) 
+{
+  const gmailArr = emailArr.filter(element => {
+    if( element.match("@gmail")) return element 
+  })
 
+  return gmailArr 
 }
 
-function getCart() {
+function getCart(cartArr) 
+{
+  let num = 1
 
+  // const num = cartArr.reduce(element => {
+  //   if(element.price < 100) 
+  // })
+
+  return num
 }
 
-function findGreater() {
+function findGreater() 
+{
+  const randomClass = {}
+  const randomObj = Object.create(randomClass)
 
+  return randomObj
 }
 
 module.exports = {
@@ -79,5 +111,12 @@ module.exports = {
 };
 
 
+const cart = [
+  { item: 'Tesla', price: 90000 },
+  { item: 'basketball', price: 99 },
+  { item: 'Rubber Duck', price: 5 },
+  { item: 'ice cream', price: 4 },
+  { item: 'Toyota camry', price: 20000 },
+];
 
-
+getCart(cart)
