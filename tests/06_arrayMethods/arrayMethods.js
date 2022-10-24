@@ -1,5 +1,11 @@
-function doubler() {
+function doubler(arr) {
+  
+  for(i in arr)
+  {
+    const arrDouble = arr.map(i * 2)
+  }
 
+  return arrDouble
 }
 
 function mapCap() {
@@ -40,3 +46,4 @@ module.exports = {
   getCart,
   findGreater,
 };
+

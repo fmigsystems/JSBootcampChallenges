@@ -5,7 +5,7 @@ const { expect } = require('chai');
 
 const {
   greet, calc,
-} = require('./objectMethods');
+} = require('./objectMethods').default;
 
 describe('greet', () => {
   it('is an object', () => {
