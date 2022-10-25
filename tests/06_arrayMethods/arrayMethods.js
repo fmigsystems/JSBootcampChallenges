@@ -82,11 +82,23 @@ function gmailSearch(emailArr)
 
 function getCart(cartArr) 
 {
-  let num = 1
+  let num = 0
+  //let initialVal = 0
 
-  // const num = cartArr.reduce(element => {
-  //   if(element.price < 100) 
-  // })
+  // let num = cartArr.reduce((accumulator, cartItem) => {
+  //   if(cartItem.price < 100)
+  //   {
+  //     return accumulator + cartItem.price
+  //   }
+  // }, initialVal)
+  
+  for( i in cartArr )
+  {
+    if(cartArr[i].price < 100)
+    {
+      num += cartArr[i].price 
+    }
+  }
 
   return num
 }

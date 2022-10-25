@@ -17,17 +17,17 @@ const calc =
 
     add(num)
     {
-        return total += num
+        return this.total += num 
     },
 
     subtract(num) 
     {
-        return total -= num
+        return this.total -= num
     },
 
     clear()
     {
-        total = 0
+        this.total = 0
     }
 };
 
