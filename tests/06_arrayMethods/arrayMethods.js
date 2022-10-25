@@ -50,9 +50,12 @@ function indAndVal(varArr)
 {
   //const arr = []
 
-  const arr = varArr.map(element => {
-    return {index: element, value: element}
-  });
+  const arr = varArr.map((element, index) => {
+    return { 
+      index: index, 
+      value: element 
+    }
+  })
 
   // for( i in varArr )
   // {
@@ -83,32 +86,39 @@ function gmailSearch(emailArr)
 function getCart(cartArr) 
 {
   let num = 0
-  //let initialVal = 0
+  let initialVal = 0
 
-  // let num = cartArr.reduce((accumulator, cartItem) => {
-  //   if(cartItem.price < 100)
-  //   {
-  //     return accumulator + cartItem.price
-  //   }
-  // }, initialVal)
+  num = cartArr.reduce((accumulator, cartItem) => {
+    //if(cartItem['price'] < 100)
+    //{
+      return cartItem.price < 100 ? accumulator + cartItem.price : accumulator
+    //}
+  }, initialVal)
   
-  for( i in cartArr )
-  {
-    if(cartArr[i].price < 100)
-    {
-      num += cartArr[i].price 
-    }
-  }
+  // for( i in cartArr )
+  // {
+  //   if(cartArr[i].price < 100)
+  //   {
+  //     num += cartArr[i].price 
+  //   }
+  // }
 
   return num
 }
 
-function findGreater() 
+function findGreater(arr) 
 {
-  const randomClass = {}
-  const randomObj = Object.create(randomClass)
+   const randomClass = {}
+   const randomObj = Object.create(randomClass)
 
-  return randomObj
+  // return randomObj
+
+  const obj = arr.find( element => {
+    //element.price > 100 ? element : randomObj  
+    if( element.price > 100 ) return element 
+  })
+
+  return obj
 }
 
 module.exports = {
@@ -124,11 +134,11 @@ module.exports = {
 
 
 const cart = [
-  { item: 'Tesla', price: 90000 },
-  { item: 'basketball', price: 99 },
-  { item: 'Rubber Duck', price: 5 },
-  { item: 'ice cream', price: 4 },
+  { item: 'robot', price: 50 },
+  { item: 'basketball', price: 25 },
+  { item: 'monitor', price: 299 },
+  { item: 'mouse', price: 100 },
   { item: 'Toyota camry', price: 20000 },
 ];
 
-getCart(cart)
+findGreater(cart)
